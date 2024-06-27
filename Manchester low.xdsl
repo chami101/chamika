@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network2" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="Building_Floor_Space">
+			<state id="High" />
+			<state id="Low" />
+			<probabilities>0.4277268106565931 0.5722731893434069</probabilities>
+		</cpt>
+		<cpt id="Total_Rainfall">
+			<state id="High" />
+			<state id="Low" />
+			<probabilities>0.4419105623391689 0.558089437660831</probabilities>
+		</cpt>
+		<cpt id="Building_Tax">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Building_Floor_Space</parents>
+			<probabilities>0.04261604942933274 0.9573839505706672 0.967589605276464 0.03241039472353603</probabilities>
+		</cpt>
+		<cpt id="Building_Height">
+			<state id="High" />
+			<state id="Low" />
+			<probabilities>0.06736179410109081 0.9326382058989091</probabilities>
+		</cpt>
+		<cpt id="Building_Age">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Building_Floor_Space Building_Height</parents>
+			<probabilities>0.3697831195991222 0.630216880400878 0.04338050352914972 0.9566194964708503 0.7479815285036839 0.252018471496316 0.9654631368547323 0.03453686314526759</probabilities>
+		</cpt>
+		<cpt id="No_of_Floors">
+			<state id="High" />
+			<state id="Low" />
+			<probabilities>0.05173552967454415 0.9482644703254558</probabilities>
+		</cpt>
+		<cpt id="Value_of_Built_Asset">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Building_Age Building_Height Building_Floor_Space No_of_Floors</parents>
+			<probabilities>0.5976149891020184 0.4023850108979816 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5000000000000001 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Rebuild_Cost">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Building_Floor_Space Building_Age Value_of_Built_Asset No_of_Floors</parents>
+			<probabilities>0.5315979782041658 0.4684020217958341 0.6730805625496755 0.3269194374503245 0.6730805625496755 0.3269194374503245 0.6730805625496755 0.3269194374503245 0.6730805625496755 0.3269194374503245 0.6730805625496755 0.3269194374503245 0.6730805625496755 0.3269194374503245 0.6730805625496755 0.3269194374503245 0.6730805625496755 0.3269194374503245 0.6730805625496755 0.3269194374503244 0.6730805625496755 0.3269194374503245 0.6730805625496755 0.3269194374503244 0.6730805625496755 0.3269194374503245 0.6730805625496755 0.3269194374503245 0.6730805625496755 0.3269194374503245 0.6730805625496755 0.3269194374503245</probabilities>
+		</cpt>
+		<cpt id="Professional_Fee">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Total_Rainfall Building_Tax Building_Floor_Space</parents>
+			<probabilities>0.7474708226045401 0.2525291773954598 0.69504063 0.30495937 0.6950406299999999 0.30495937 0.69504063 0.30495937 0.69504063 0.30495937 0.69504063 0.30495937 0.6950406300000002 0.3049593699999999 0.69504063 0.30495937</probabilities>
+		</cpt>
+		<cpt id="Insurance_Cover">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Building_Tax Rebuild_Cost Building_Age Professional_Fee</parents>
+			<probabilities>0.4467225819904006 0.5532774180095993 0.8473934840281793 0.1526065159718208 0.8473934840281793 0.1526065159718208 0.8473934840281793 0.1526065159718208 0.8473934840281792 0.1526065159718208 0.8473934840281794 0.1526065159718207 0.8473934840281793 0.1526065159718208 0.8473934840281793 0.1526065159718208 0.8473934840281793 0.1526065159718208 0.8473934840281793 0.1526065159718208 0.8473934840281793 0.1526065159718208 0.8473934840281794 0.1526065159718207 0.8473934840281793 0.1526065159718208 0.8473934840281793 0.1526065159718208 0.8473934840281792 0.1526065159718208 0.8473934840281792 0.1526065159718208</probabilities>
+		</cpt>
+		<cpt id="Rapidity">
+			<state id="High" />
+			<state id="Medium" />
+			<state id="Low" />
+			<parents>Insurance_Cover Rebuild_Cost Professional_Fee</parents>
+			<probabilities>0.4621094644714278 0.3767924829233035 0.1610980526052687 0.3333333333333334 0.3333333333333333 0.3333333333333333 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333336 0.3333333333333331 0.3333333333333331 0.3333333333333331 0.3333333333333333 0.3333333333333334 0.3333333333333334 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333</probabilities>
+		</cpt>
+		<cpt id="Redundancy">
+			<state id="High" />
+			<state id="Medium" />
+			<state id="Low" />
+			<parents>Building_Floor_Space Building_Height Building_Age No_of_Floors</parents>
+			<probabilities>0.3325700550921296 0.5074738116164146 0.1599561332914558 0.4441384641749675 0.2218196661751672 0.3340418696498653 0.4441384641749675 0.2218196661751672 0.3340418696498653 0.4441384641749675 0.2218196661751672 0.3340418696498653 0.3333333333333343 0.3333333333333328 0.3333333333333328 0.3333333333333343 0.3333333333333329 0.3333333333333329 0.3333333333333343 0.3333333333333328 0.3333333333333328 0.3333333333333345 0.3333333333333328 0.3333333333333328 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333334 0.3333333333333331 0.3333333333333334 0.3333333333333335 0.3333333333333333 0.3333333333333333 0.3333333333333334 0.3333333333333333 0.3333333333333333 0.3333333333333334</probabilities>
+		</cpt>
+		<cpt id="Robustness">
+			<state id="High" />
+			<state id="Medium" />
+			<state id="Low" />
+			<parents>Building_Height Total_Rainfall Building_Age</parents>
+			<probabilities>0.07067407974619898 0.5623092971738411 0.3670166230799599 0.2794060265578951 0.3702720963196949 0.3503218771224101 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333335 0.3333333333333331 0.3333333333333331 0.3333333333333336 0.3333333333333331 0.3333333333333333 0.3333333333333331 0.3333333333333336 0.3333333333333334 0.3333333333333333 0.3333333333333334 0.3333333333333331</probabilities>
+		</cpt>
+		<cpt id="Resourcefulness">
+			<state id="High" />
+			<state id="Medium" />
+			<state id="Low" />
+			<parents>Building_Tax Value_of_Built_Asset</parents>
+			<probabilities>0.1931339068946044 0.4218968388857193 0.3849692542196762 0.4191302043477644 0.1354022188723722 0.4454675767798635 0.4191302043477644 0.1354022188723722 0.4454675767798635 0.4191302043477644 0.1354022188723722 0.4454675767798635</probabilities>
+		</cpt>
+		<cpt id="Node1">
+			<state id="High" />
+			<state id="Medium" />
+			<state id="Low" />
+			<parents>Rapidity Redundancy Robustness Resourcefulness</parents>
+			<probabilities>0.5975594201601963 0.140028336169477 0.2624122436703268 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333334 0.3333333333333334 0.3333333333333334 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.3333333333333333 0.4488558627570604 0.3245820772429397 0.22656206</probabilities>
+		</cpt>
+	</nodes>
+	<cases>
+		<case name="Case0001">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0002">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0003">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0004">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0005">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0006">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0007">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0008">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0009">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0010">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0011">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0012">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0013">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0014">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0015">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0016">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0017">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0018">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0019">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0020">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0021">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0022">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0023">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0024">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0025">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0026">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0027">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0028">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0029">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0030">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0031">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0032">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0033">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0034">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0035">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0036">
+			<evidence node="Building_Height" state="Low" />
+		</case>
+		<case name="Case0037">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0038">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0039">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0040">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0041">
+			<evidence node="Building_Height" state="High" />
+		</case>
+		<case name="Case0042">
+			<evidence node="Building_Height" state="High" />
+		</case>
+	</cases>
+	<extensions>
+		<genie version="1.0" app="GeNIe 4.1.3724.0 ACADEMIC" name="Network2">
+			<node id="Node1">
+				<name>Built Assets Flood Resilience</name>
+				<interior color="ff9900" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>541 71 740 101</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Rapidity">
+				<name>Rapidity</name>
+				<interior color="faf59e" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>273 133 362 176</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Redundancy">
+				<name>Redundancy</name>
+				<interior color="fac074" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>490 172 563 217</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Robustness">
+				<name>Robustness</name>
+				<interior color="d7f0a8" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>721 168 792 212</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Resourcefulness">
+				<name>Resourcefulness</name>
+				<interior color="339966" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>863 122 970 170</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Building_Floor_Space">
+				<name>Building Floor Space</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>495 320 608 351</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Insurance_Cover">
+				<name>Insurance Cover</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>332 222 423 278</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Rebuild_Cost">
+				<name>Rebuild Cost</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>337 402 410 447</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Building_Height">
+				<name>Building Height</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>473 445 570 479</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Total_Rainfall">
+				<name>Total Rainfall</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>651 451 724 496</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Professional_Fee">
+				<name>Professional Fee</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>233 316 324 372</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Building_Tax">
+				<name>Building Tax</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>917 243 965 273</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Building_Age">
+				<name>Building Age</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>724 337 772 367</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Value_of_Built_Asset">
+				<name>Value of built asest</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>915 338 963 368</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="No_of_Floors">
+				<name>No of Floors</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>823 435 871 465</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<arcformat parent="Insurance_Cover" child="Rapidity" width="1" color="000080" />
+			<arcformat parent="Rebuild_Cost" child="Rapidity" width="1" color="000080" />
+			<arcformat parent="Professional_Fee" child="Rapidity" width="1" color="000080" />
+			<arcformat parent="Building_Floor_Space" child="Redundancy" width="1" color="000080" />
+			<arcformat parent="Building_Height" child="Redundancy" width="1" color="000080" />
+			<arcformat parent="Building_Height" child="Robustness" width="1" color="000080" />
+			<arcformat parent="Total_Rainfall" child="Robustness" width="1" color="000080" />
+			<arcformat parent="Rapidity" child="Node1" width="1" color="000080" />
+			<arcformat parent="Redundancy" child="Node1" width="1" color="000080" />
+			<arcformat parent="Robustness" child="Node1" width="1" color="000080" />
+			<arcformat parent="Resourcefulness" child="Node1" width="1" color="000080" />
+		</genie>
+	</extensions>
+</smile>

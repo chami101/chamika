@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network2" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="Proximity_to_Nearest_Water_Culvert">
+			<state id="High" />
+			<state id="Low" />
+			<probabilities>0.358945662599177 0.641054337400823</probabilities>
+		</cpt>
+		<cpt id="Building_Age">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Proximity_to_Nearest_Water_Culvert</parents>
+			<probabilities>0.1145595934849303 0.8854404065150696 0.002220442214852572 0.9977795577851474</probabilities>
+		</cpt>
+		<cpt id="Value_of_Built_Asset">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Building_Age</parents>
+			<probabilities>0.3035174058046674 0.6964825941953326 0.1341855759306006 0.8658144240693993</probabilities>
+		</cpt>
+		<cpt id="Elevation">
+			<state id="High" />
+			<state id="Low" />
+			<probabilities>0.996728858269849 0.003271141730150979</probabilities>
+		</cpt>
+		<cpt id="Building_Tax">
+			<state id="High" />
+			<state id="Low" />
+			<probabilities>0.9487666946842884 0.05123330531571157</probabilities>
+		</cpt>
+		<cpt id="Rebuild_Cost">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Building_Age Elevation</parents>
+			<probabilities>0.554916487499358 0.445083512500642 0.3648999529821068 0.6351000470178931 0.3648999529821069 0.6351000470178931 0.3648999529821068 0.6351000470178931</probabilities>
+		</cpt>
+		<cpt id="Professional_Fee">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Building_Tax Rebuild_Cost Elevation</parents>
+			<probabilities>0.1112631074073746 0.8887368925926254 0.6948466884973352 0.3051533115026647 0.6948466884973354 0.3051533115026647 0.6948466884973352 0.3051533115026647 0.6948466884973353 0.3051533115026647 0.6948466884973352 0.3051533115026647 0.6948466884973353 0.3051533115026647 0.6948466884973352 0.3051533115026647</probabilities>
+		</cpt>
+		<cpt id="Insurance_Cover">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Proximity_to_Nearest_Water_Culvert Value_of_Built_Asset Professional_Fee Elevation</parents>
+			<probabilities>0.7375228954915743 0.2624771045084257 0.1741179609118852 0.8258820390881149 0.1741179609118852 0.8258820390881149 0.1741179609118852 0.8258820390881149 0.1741179609118851 0.8258820390881149 0.1741179609118852 0.8258820390881149 0.1741179609118852 0.8258820390881147 0.1741179609118852 0.8258820390881149 0.1741179609118851 0.8258820390881149 0.1741179609118852 0.8258820390881149 0.1741179609118852 0.8258820390881149 0.1741179609118852 0.8258820390881149 0.1741179609118851 0.825882039088115 0.1741179609118852 0.8258820390881149 0.1741179609118853 0.8258820390881146 0.1741179609118852 0.8258820390881149</probabilities>
+		</cpt>
+		<cpt id="Rapidity">
+			<state id="High" />
+			<state id="Medium" />
+			<state id="Low" />
+			<parents>Insurance_Cover Rebuild_Cost Professional_Fee Proximity_to_Nearest_Water_Culvert</parents>
+			<probabilities>0.4264989051404235 0.4368659390233697 0.1366351558362068 0.4225991203895462 0.2637300807002377 0.3136707989102162 0.76005868 0.1285434642286147 0.1113978557713852 0.4027459954233408 0.36 0.2372540045766592 0.76005868 0.1285434642286148 0.1113978557713852 0.4027459954233409 0.36 0.237254004576659 0.76005868 0.1285434642286148 0.1113978557713852 0.4027459954233408 0.3600000000000001 0.2372540045766591 0.7600586799999999 0.1285434642286148 0.1113978557713852 0.4027459954233409 0.36 0.2372540045766592 0.76005868 0.1285434642286147 0.1113978557713852 0.4027459954233408 0.3600000000000003 0.2372540045766588 0.7600586800000001 0.1285434642286147 0.1113978557713852 0.4027459954233408 0.3600000000000003 0.2372540045766589 0.7600586800000001 0.1285434642286147 0.1113978557713852 0.4027459954233409 0.3600000000000002 0.2372540045766589</probabilities>
+		</cpt>
+		<cpt id="Redundancy">
+			<state id="High" />
+			<state id="Medium" />
+			<state id="Low" />
+			<parents>Building_Age</parents>
+			<probabilities>0.02490597033444129 0.2600909025038594 0.7150031271616993 0.5589423999999998 0.1073359684091764 0.3337216315908236</probabilities>
+		</cpt>
+		<cpt id="Robustness">
+			<state id="High" />
+			<state id="Medium" />
+			<state id="Low" />
+			<parents>Elevation Building_Age</parents>
+			<probabilities>0.1318106555261299 0.2329034514473121 0.6352858930265579 0.6935902039999999 0.2645597675053177 0.04185002849468232 0.8940474 0.0650536777052699 0.04089892229473006 0.693590204 0.2645597675053177 0.04185002849468229</probabilities>
+		</cpt>
+		<cpt id="Resourcefulness">
+			<state id="High" />
+			<state id="Medium" />
+			<state id="Low" />
+			<parents>Proximity_to_Nearest_Water_Culvert Value_of_Built_Asset Building_Tax</parents>
+			<probabilities>0.7421902497396052 0.2126717073847971 0.04513804287559769 0.4117157207909596 0.3071509741283698 0.2811333050806705 0.655705164410209 0.30564341 0.03865142558979108 0.4117157207909596 0.3071509741283698 0.2811333050806706 0.6557051644102089 0.3056434099999999 0.03865142558979111 0.03700775828590588 0.5691449594161996 0.3938472822978946 0.655705164410209 0.3056434099999999 0.03865142558979113 0.03700775828590588 0.5691449594161996 0.3938472822978946</probabilities>
+		</cpt>
+		<cpt id="Built_Assets_Flood_Resilience">
+			<state id="High" />
+			<state id="Medium" />
+			<state id="Low" />
+			<parents>Rapidity Redundancy Robustness Resourcefulness</parents>
+			<probabilities>0.3641231405928107 0.5243421297880478 0.1115347296191414 0.2333333332333333 0.333333333333333 0.4333333334333336 0.1363505761895362 0.1678160938104636 0.6958333300000001 0.6706214835492957 0.06624601576866264 0.2631325006820415 0.2333333332333333 0.3333333333333329 0.4333333334333337 0.1363505761895361 0.1678160938104638 0.6958333300000002 0.6706214835492957 0.06624601576866265 0.2631325006820415 0.2333333332333334 0.3333333333333329 0.4333333334333337 0.1363505761895364 0.1678160938104636 0.6958333299999999 0.670621483549296 0.06624601576866268 0.2631325006820415 0.2333333332333335 0.3333333333333334 0.4333333334333331 0.1363505761895363 0.1678160938104638 0.6958333299999999 0.6706214835492957 0.06624601576866267 0.2631325006820415 0.2333333332333335 0.3333333333333331 0.4333333334333334 0.1363505761895361 0.1678160938104636 0.6958333300000002 0.6706214835492957 0.06624601576866268 0.2631325006820415 0.2333333332333329 0.3333333333333332 0.4333333334333337 0.1363505761895363 0.1678160938104638 0.6958333299999998 0.6706214835492955 0.06624601576866272 0.2631325006820417 0.2333333332333332 0.3333333333333335 0.4333333334333333 0.1363505761895362 0.1678160938104637 0.6958333300000001 0.6706214835492957 0.06624601576866271 0.2631325006820415 0.2333333332333335 0.3333333333333337 0.4333333334333327 0.1363505761895361 0.1678160938104636 0.6958333300000002 0.6706214835492958 0.06624601576866267 0.2631325006820415 0.2333333332333334 0.3333333333333339 0.4333333334333326 0.1363505761895362 0.1678160938104637 0.69583333 0.6706214835492957 0.06624601576866272 0.2631325006820416 0.2333333332333334 0.3333333333333334 0.4333333334333334 0.1363505761895361 0.1678160938104636 0.6958333300000002 0.6706214835492956 0.06624601576866264 0.2631325006820417 0.2333333332333335 0.3333333333333331 0.4333333334333334 0.1363505761895361 0.1678160938104638 0.69583333 0.6706214835492958 0.06624601576866267 0.2631325006820416 0.2333333332333335 0.3333333333333334 0.4333333334333331 0.1363505761895362 0.1678160938104636 0.6958333300000004 0.6706214835492958 0.06624601576866269 0.2631325006820416 0.2333333332333335 0.3333333333333334 0.4333333334333331 0.1363505761895361 0.1678160938104637 0.6958333300000001 0.6706214835492957 0.06624601576866267 0.2631325006820415 0.2333333332333334 0.3333333333333332 0.4333333334333335 0.1363505761895361 0.1678160938104637 0.69583333 0.6706214835492957 0.06624601576866268 0.2631325006820416 0.2333333332333333 0.3333333333333333 0.4333333334333335 0.1363505761895364 0.1678160938104639 0.6958333299999997 0.6706214835492957 0.06624601576866272 0.2631325006820415 0.2333333332333335 0.3333333333333329 0.4333333334333336 0.1363505761895363 0.1678160938104639 0.6958333299999999 0.6706214835492958 0.06624601576866265 0.2631325006820414 0.2333333332333334 0.3333333333333335 0.4333333334333329 0.1363505761895362 0.1678160938104639 0.6958333299999999 0.6706214835492958 0.06624601576866267 0.2631325006820415 0.2333333332333334 0.3333333333333333 0.4333333334333334 0.1363505761895363 0.167816093810464 0.6958333299999998 0.6706214835492958 0.06624601576866264 0.2631325006820414 0.2333333332333332 0.3333333333333336 0.4333333334333331 0.1363505761895362 0.1678160938104638 0.6958333299999999 0.6706214835492957 0.06624601576866269 0.2631325006820416 0.2333333332333339 0.3333333333333336 0.4333333334333326 0.1363505761895362 0.1678160938104639 0.6958333299999998 0.6706214835492956 0.06624601576866272 0.2631325006820417 0.2333333332333336 0.3333333333333326 0.4333333334333337 0.1363505761895363 0.1678160938104638 0.6958333299999998 0.6706214835492957 0.06624601576866269 0.2631325006820415 0.233333333233333 0.333333333333333 0.433333333433334 0.1363505761895361 0.1678160938104639 0.6958333299999999 0.6706214835492956 0.06624601576866267 0.2631325006820415 0.2333333332333336 0.3333333333333328 0.4333333334333336 0.1363505761895364 0.1678160938104636 0.6958333299999999 0.6706214835492957 0.06624601576866269 0.2631325006820415 0.2333333332333337 0.333333333333333 0.4333333334333332 0.1363505761895363 0.1678160938104634 0.6958333300000002 0.6706214835492957 0.06624601576866269 0.2631325006820416 0.2333333332333333 0.3333333333333342 0.4333333334333325 0.1363505761895361 0.1678160938104637 0.6958333300000002 0.6706214835492958 0.06624601576866265 0.2631325006820415 0.2333333332333339 0.3333333333333329 0.4333333334333333 0.1363505761895363 0.1678160938104639 0.6958333299999997 0.6706214835492956 0.06624601576866265 0.2631325006820416 0.2333333332333328 0.333333333333333 0.4333333334333341 0.1363505761895365 0.167816093810464 0.6958333299999995</probabilities>
+		</cpt>
+	</nodes>
+	<cases>
+		<case name="Case0001">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0002">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0003">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0004">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0005">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0006">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0007">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0008">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0009">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0010">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0011">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0012">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0013">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0014">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0015">
+			<evidence node="Building_Age" state="Low" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0016">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="High" />
+		</case>
+		<case name="Case0017">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0018">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0019">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0020">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0021">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0022">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0023">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0024">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0025">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0026">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0027">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0028">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0029">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0030">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0031">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0032">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0033">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0034">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0035">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0036">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0037">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0038">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0039">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0040">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0041">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+		<case name="Case0042">
+			<evidence node="Building_Age" state="High" />
+			<evidence node="Value_of_Built_Asset" state="Low" />
+		</case>
+	</cases>
+	<extensions>
+		<genie version="1.0" app="GeNIe 4.1.3724.0 ACADEMIC" name="Network2">
+			<node id="Rapidity">
+				<name>Rapidity</name>
+				<interior color="faf59e" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>253 143 342 186</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Redundancy">
+				<name>Redundancy</name>
+				<interior color="fac074" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>470 153 547 198</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Robustness">
+				<name>Robustness</name>
+				<interior color="d7f0a8" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>742 158 813 202</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Resourcefulness">
+				<name>Resourcefulness</name>
+				<interior color="339966" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>915 149 1022 197</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Insurance_Cover">
+				<name>Insurance Cover</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>430 254 521 310</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Rebuild_Cost">
+				<name>Rebuild Cost</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>359 361 432 406</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Building_Tax">
+				<name>Building Tax</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>618 246 715 280</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Value_of_Built_Asset">
+				<name>Value of Built Asset</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>513 383 601 415</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Elevation">
+				<name>Elevation</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>851 362 933 407</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Proximity_to_Nearest_Water_Culvert">
+				<name>Proximity to Nearest Water Culvert</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>880 266 960 316</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Building_Age">
+				<name>Building Age</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>689 386 760 430</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Professional_Fee">
+				<name>Professional Fee</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>258 250 349 306</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Built_Assets_Flood_Resilience">
+				<name>Built Assets Flood Resilience</name>
+				<interior color="ff9900" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>554 29 742 90</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+		</genie>
+	</extensions>
+</smile>
